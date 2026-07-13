@@ -1,0 +1,31 @@
+{
+  "name": "@proxy-cli/proxy",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "proxy-cli": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ./scripts/copy-public.mjs",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.4",
+    "@proxy-cli/distill": "workspace:*",
+    "@proxy-cli/ltm": "workspace:*",
+    "@proxy-cli/proto": "workspace:*",
+    "@proxy-cli/redact": "workspace:*",
+    "hono": "^4.8.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.32",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

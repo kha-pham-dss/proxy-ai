@@ -1,0 +1,23 @@
+{
+  "name": "proxy-ai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local passive memory proxy for coding agents (Cursor, Codex, Claude Code)",
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm --filter @proxy-cli/proxy dev",
+    "start": "pnpm --filter @proxy-cli/proxy start",
+    "test": "pnpm -r run test",
+    "typecheck": "pnpm -r run typecheck"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ]
+  }
+}

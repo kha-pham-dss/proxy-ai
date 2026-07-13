@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proxy CLI — Memory</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <p class="eyebrow">localhost</p>
+        <h1>Proxy CLI</h1>
+        <p class="sub">Coding memory for Cursor, Codex, and Claude Code</p>
+      </div>
+      <div id="status" class="status">Loading…</div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Overview</h2>
+        <div id="overview" class="grid"></div>
+      </section>
+
+      <section>
+        <h2>Habits</h2>
+        <p class="hint">Only enabled habits are injected into agent context.</p>
+        <div id="habits"></div>
+      </section>
+
+      <section>
+        <h2>Profile</h2>
+        <label>Stacks (comma-separated)</label>
+        <input id="stacks" type="text" />
+        <label>Style (one per line)</label>
+        <textarea id="style" rows="4"></textarea>
+        <button id="save-profile" type="button">Save profile</button>
+        <h3>Facts</h3>
+        <ul id="facts"></ul>
+        <h3>Projects</h3>
+        <ul id="projects"></ul>
+      </section>
+
+      <section>
+        <h2>Distill</h2>
+        <label>Model</label>
+        <select id="model"></select>
+        <label>Idle minutes</label>
+        <input id="idle" type="number" min="1" step="1" />
+        <div class="row">
+          <button id="save-settings" type="button">Save settings</button>
+          <button id="distill-now" type="button" class="primary">Distill now</button>
+        </div>
+      </section>
+
+      <section class="danger">
+        <h2>Danger zone</h2>
+        <p class="hint">Clears facts/projects/stacks/style/identity. Seed habits stay, disabled.</p>
+        <button id="reset" type="button" class="danger-btn">Reset LTM</button>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
